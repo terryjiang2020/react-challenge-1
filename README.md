@@ -15,8 +15,7 @@ This repo has made a presentation for the desired component in order to showcase
 All covered situations are listed below:
 
 - When the SelectComponent is at the middle of the screen.
-- When the SelectComponent is at the top of the screen.
-- When the SelectComponent is at the bottom of the screen.
+- When the SelectComponent is at the edges of the screen.
 - When the SelectComponent is at the corners of the screen.
 - When the label of the options in SelectComponent is too long.
 - When the SelectComponent is flexed inside a column.
