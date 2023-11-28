@@ -156,7 +156,7 @@ function App() {
             <p className='mt-4'>
               If the element finds itself to be too close to the bottom of the page, its drop down would show on the top of the element.
             </p>
-            <p className='sm:block hidden mt-4'>
+            <p className='sm:hidden block mt-4'>
               This demo is not supported in mobile. Please try it on a desktop.
             </p>
           </div>
@@ -191,7 +191,7 @@ function App() {
             <p className='mt-4'>
               If the element finds itself to be too close to the bottom of the page, its drop down would show on the top of the element.
             </p>
-            <p className='sm:block hidden mt-4'>
+            <p className='sm:hidden block mt-4'>
               This demo is not supported in mobile. Please try it on a desktop.
             </p>
           </div>
