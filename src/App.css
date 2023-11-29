@@ -198,13 +198,10 @@
   text-align: left;
   width: 100%;
   max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
 }
 
 @media screen and (max-width: 767px) {
   .demo-container {
-    height: 95vh;
     top: 0;
     left: 0;
     transform: translate(0, 0);

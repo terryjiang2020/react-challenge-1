@@ -74,28 +74,28 @@ function App() {
             The feature of this component will be presented in the following steps:
             <ul className='mt-4'>
               <li>
-                Step 1: Basic usage
+                Demo 1: Basic usage
               </li>
               <li>
-                Step 2: On the edges of the screen
+                Demo 2: On the edges of the screen
               </li>
               <li>
-                Step 3: On the corners of the screen
+                Demo 3: On the corners of the screen
               </li>
               <li>
-                Step 4: Long option
+                Demo 4: Long option
               </li>
               <li>
-                Step 5: Options in a flex row
+                Demo 5: Options in a flex row
               </li>
               <li>
-                Step 6: Options in a flex column
+                Demo 6: Options in a flex column
               </li>
               <li>
-                Step 7: onChange event
+                Demo 7: onChange event
               </li>
               <li>
-                Step 8: Default value
+                Demo 8: Default value
               </li>
             </ul>
           </p>
@@ -118,7 +118,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 1: Basic usage</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 1: Basic usage</h1>
           <div className='text-left mb-4'>
             <p>
               User can pick an item from the option list.
@@ -148,7 +148,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 2: On the edges of the screen</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 2: On the edges of the screen</h1>
           <div className='text-left mb-4'>
             <p>
               When the select component is on the edge of the screen, they will still display the drop down list properly.
@@ -183,7 +183,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 3: On the corners of the screen</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 3: On the corners of the screen</h1>
           <div className='text-left mb-4'>
             <p>
               When the select component is on the corners of the screen, they will still display the drop down list properly.
@@ -215,7 +215,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 4: Long option</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 4: Long option</h1>
           <div className='text-left mb-4'>
             <p>
               Sometimes we may have an option list full of options with long texts. The Select Component will display the 
@@ -243,7 +243,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 5: Options in a flex row</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 5: Options in a flex row</h1>
           <div className='text-left mb-4'>
             <p>
               In the case the select component is in a flex row, the drop down list would be displayed in a flex row as well.
@@ -279,7 +279,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 6: Options in a flex column</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 6: Options in a flex column</h1>
           <div className='text-left mb-4'>
             <p>
               In the case the select component is in a flex column, the drop down list would be displayed in a flex column as well.
@@ -312,7 +312,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 7: onChange event</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 7: onChange event</h1>
           <div className='text-left mb-4'>
             <p>
               User can add a onChange event callback handler to the Select Component to handle the event whenever a new option has been selected.
@@ -344,7 +344,7 @@ function App() {
       demo-container
       ">
         <div className='description-container'>
-          <h1 className="text-3xl font-bold mb-4">Step 8: Default value</h1>
+          <h1 className="text-3xl font-bold mb-4">Demo 8: Default value</h1>
           <div className='text-left mb-4'>
             <p>
               By setting the "default" key of an option to be "true", user can make the option to be the default value of the select component.
