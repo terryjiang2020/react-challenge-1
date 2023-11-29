@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 import SelectComponent from './components/Select';
 import { Option } from './shared/types';

@@ -10,7 +10,8 @@ type SelectComponentProps = {
     selectClassName?: string,
     optionContainerClassName?: string,
     optionClassName?: string,
-    onChange?: (value: string) => void
+    onChange?: (value: string) => void,
+    title?: string
 }
 
 const SelectComponent = (props: SelectComponentProps) => {
@@ -47,7 +48,6 @@ const SelectComponent = (props: SelectComponentProps) => {
         }
     }, [selectedOption, props])
 
-    // const handleSelection = (option: Option, event?: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const handleSelection = (option: Option, event?: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         console.log('headleSelection is triggered, option: ', option, ', event: ', event);
         if (event) {
@@ -81,16 +81,20 @@ const SelectComponent = (props: SelectComponentProps) => {
 
     useEffect(() => {
         if (selectionOpened) {
+            let focusedOption;
             if (selectedOption.value) {
-                document.getElementById(uid + '-' + selectedOption.value)?.focus();
+                focusedOption = document.getElementById(uid + '-' + selectedOption.value);
             }
             else if (hoveredOption.value) {
-                document.getElementById(uid + '-' + hoveredOption.value)?.focus();
+                focusedOption = document.getElementById(uid + '-' + hoveredOption.value);
             }
             else {
-                document.getElementById(uid + '-' + props.options[0].value)?.focus();
+                focusedOption = document.getElementById(uid + '-' + props.options[0].value);
             }
+            focusedOption?.focus();
+            focusedOption?.scrollIntoView(true);
         }
+        // use selectionOpened as the dependency since we only want this to be triggered if selectionOpened is changed.
     }, [selectionOpened]);
 
     useEffect(() => {
@@ -104,21 +108,8 @@ const SelectComponent = (props: SelectComponentProps) => {
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
         console.log('handleKeyDown is triggered, event: ', event);
         switch (event.key) {
-            // case 'ArrowUp':
-                //   event.preventDefault();
-                //   navigateOptions(-1);
-                //   break;
-            // case 'ArrowDown':
-                //   event.preventDefault();
-                //   navigateOptions(1);
-                //   break;
             case 'Enter':
                 event.preventDefault();
-                //   if (selectionOpened && hoveredOption) {
-                //     handleSelection(props.options.find((option) => option.value === hoveredOption.value) || props.options[0]);
-                //   } else {
-                //     setSelectionOpened(true);
-                //   }
                 if (!selectionOpened) {
                     setSelectionOpened(true);
                 }
@@ -168,12 +159,12 @@ const SelectComponent = (props: SelectComponentProps) => {
 
     const defaultContainerClassName = ' select-container'
 
-    const defaultOptionClassName = ' h-11 w-full cursor-pointer select-none relative py-2 pl-3 pr-9 hover:font-medium leading-7 line-clamp-1'
+    const defaultOptionClassName = ' h-11 w-full cursor-pointer select-none relative py-2 pl-3 pr-9 hover:font-medium leading-8 line-clamp-1'
 
     const render = (
         <div className={(props.className ? props.className : '') + ' text-base' + (selectionOpened ? ' expanded' : '')}>
             <div className="select-title">
-                Occupation
+                { props.title ? props.title : 'Occupation'}
             </div>
             <div
             ref={eleRef}
@@ -185,7 +176,7 @@ const SelectComponent = (props: SelectComponentProps) => {
             aria-expanded={selectionOpened}
             aria-labelledby="selectLabel"
             aria-owns={uid}
-            aria-label="Select Occupation"
+            aria-label={"Select " + (props.title ? props.title : 'Occupation')}
             aria-controls={uid}
             role="combobox">
                 <div className={
@@ -219,69 +210,42 @@ const SelectComponent = (props: SelectComponentProps) => {
                 </div>
                 
                 <div
-                    className={
-                        'option-container' +
-                        // (displayOptionsAbove ? ' bottom-20' : ' top-20') +
-                        (displayOptionsAbove ? ' display-above' : '') +
-                        (props.optionContainerClassName ? ' ' + props.optionContainerClassName : '')
-                    }
-                    id={uid}>
-                        {/* <div className={'options-list'}
-                        role='listbox'
-                        aria-label='Select Occupation'>
-                            {
-                                props.options.map(option => (
-                                    <div onClick={(ev) => handleSelection(option, ev)}
-                                    className={
-                                        (
-                                            selectedOption.value === option.value ?
-                                            ' bg-[#6E2B96] text-white' :
-                                            hoveredOption.value === option.value ?
-                                            ' font-medium' :
-                                            ''
-                                        ) +
-                                        defaultOptionClassName + 
-                                        (props.optionClassName ? ' ' + props.optionClassName : '')
-                                    }
-                                    aria-label={option.label}
-                                    key={option.value}
-                                    aria-selected={selectedOption.value === option.value}
-                                    role='option'>
-                                        {option.label}
-                                    </div>
-                                ))
-                            }
-                        </div> */}
-                        <ul className={'options-list'}
-                        role='listbox'
-                        aria-label='Select Occupation'
-                        tabIndex={-1}>
-                            {
-                                props.options.map(option => (
-                                    <li onClick={(ev) => handleSelection(option, ev)}
-                                    className={
-                                        (
-                                            selectedOption.value === option.value ?
-                                            ' bg-[#6E2B96] text-white' :
-                                            hoveredOption.value === option.value ?
-                                            ' font-medium' :
-                                            ''
-                                        ) +
-                                        defaultOptionClassName + 
-                                        (props.optionClassName ? ' ' + props.optionClassName : '')
-                                    }
-                                    aria-label={option.label}
-                                    key={option.value}
-                                    aria-selected={selectedOption.value === option.value}
-                                    role='option'
-                                    id={uid + '-' + option.value}
-                                    tabIndex={0}
-                                    onKeyDown={(ev) => handleKeyDownItem(option, ev)}>
-                                        {option.label}
-                                    </li>
-                                ))
-                            }
-                        </ul>
+                className={
+                    'option-container' +
+                    (displayOptionsAbove ? ' display-above' : '') +
+                    (props.optionContainerClassName ? ' ' + props.optionContainerClassName : '')
+                }
+                id={uid}>
+                    <ul className={'options-list'}
+                    role='listbox'
+                    aria-label='Select Occupation'
+                    tabIndex={-1}>
+                        {
+                            props.options.map(option => (
+                                <li onClick={(ev) => handleSelection(option, ev)}
+                                className={
+                                    (
+                                        selectedOption.value === option.value ?
+                                        ' bg-[#6E2B96] text-white' :
+                                        hoveredOption.value === option.value ?
+                                        ' font-medium' :
+                                        ''
+                                    ) +
+                                    defaultOptionClassName + 
+                                    (props.optionClassName ? ' ' + props.optionClassName : '')
+                                }
+                                aria-label={option.label}
+                                key={option.value}
+                                aria-selected={selectedOption.value === option.value}
+                                role='option'
+                                id={uid + '-' + option.value}
+                                tabIndex={0}
+                                onKeyDown={(ev) => handleKeyDownItem(option, ev)}>
+                                    {option.label}
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
