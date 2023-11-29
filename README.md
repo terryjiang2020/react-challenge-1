@@ -1,77 +1,59 @@
-# Getting Started with Create React App
+# Project Overview: React App with Vite and Custom SelectComponent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Repository Usage Guidelines
 
-## How to use this repo
+To review the submission, please follow the steps below to run the repository locally:
 
-To view the submission, you will need to run this repo locally by following these steps.
+1. Clone or download the repository to your local device.
+2. Navigate to the root directory and execute the command `npm i` to install the required dependencies.
+3. After the installation is complete, run `npm start`. The project will be accessible at [http://localhost:3000](http://localhost:3000) in your web browser.
 
-1. Clone or download the repo to your local device.
-2. In the root directory of this repo, run `npm i`.
-3. After the previous action is completed, run `npm start`. And you should be able to view the project at [http://localhost:3000](http://localhost:3000) in your browser.
+This repository includes a presentation of a customized SelectComponent designed to demonstrate its performance under various scenarios, particularly those outlined in the provided documentation.
 
-This repo has made a presentation for the desired component in order to showcase its performance in different situations, especially the situations that have been noted in the provided documentation.
+Key Scenarios Covered:
 
-All covered situations are listed below:
+- Display of the SelectComponent in the middle, edges, and corners of the screen.
+- Handling long labels for options in the SelectComponent.
+- Flexibility of the SelectComponent within a column layout.
 
-- When the SelectComponent is at the middle of the screen.
-- When the SelectComponent is at the edges of the screen.
-- When the SelectComponent is at the corners of the screen.
-- When the label of the options in SelectComponent is too long.
-- When the SelectComponent is flexed inside a column.
+Feature Requirements Addressed:
 
-The following feature requirements are included in this submission:
+- Developed using React + TypeScript.
+- Custom and visually appealing design aligned with the provided Figma design.
+- Responsive design ensuring aesthetic consistency across different screen sizes and resolutions (tested down to a width of 320px).
+- Full accessibility compliance with WCAG 2.1 AA guidelines.
+- Keyboard navigation support for users (Tab, Enter, Arrow keys).
+- Compatibility with screen readers (e.g., Apple Voiceover).
+- Utilization of ARIA attributes to enhance accessibility.
+- Single selection capability.
+- Provision for a default selected value through the "options" prop, with each option having a "default" attribute to indicate its default status.
+- Option for users to provide a callback function to handle the onChange event when the selected option changes.
 
-- Used React + TypeScript.
-- Design is custom and visually appealing. It is made as close to the Figma design as possible.
-- It is built to be responsive and maintain its aesthetics across different screen sizes and resolutions. The smaller tested screen width is 320px, which is the smallest default screen width provided by Chrome.
-- The component is fully accessible, adhering to WCAG 2.1 AA guidelines.
-- Users can use keyboard (Tab, Enter, Arrow keys) to choose and change selected options.
-- Users can use screen readers (e.g. Apple Voiceover).
-- ARIA attributes are used to enhance accessibility.
-- Single selection only.
-- Has prop to set a default selected value.
-  - This is included in the prop value "options", which each of the option has a "default" value to decide if it is the default value or not.
-  - If multiple default value exists, the SelectComponent will use the first default element in the array.
-- User can provide a callback function to the SelectComponent to handle the onChange event, which is triggered whenever the selectedOption is changed.
+Best Practices and Recommendations:
 
-Notable usage:
+- It is advisable to specify a width for the SelectComponent to maintain consistent rendering, especially when the length of the selected option's label varies.
 
-- It is suggested to provide a width to the SelectComponent. Otherwise, the width of the element could be changed when the length of the selected option's label changes.
+## Usage Instructions
 
-## Available Scripts
+### Available Scripts
 
-In the project directory, you can run:
+In the project directory, the following npm scripts are available:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Launches the app in development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload upon making edits, and lint errors will be displayed in the console.
 
-### `npm test`
+#### `npm run build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Builds the app for production in the `dist` folder.\
+Optimizes the build for performance, including minification and file hashing.
 
-### `npm run build`
+The application is now ready for deployment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `npm run serve`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If the project has been built, this command serves the bundled application.\
+The page is accessible at [http://localhost:4173](http://localhost:4173).
