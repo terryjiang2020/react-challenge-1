@@ -3,8 +3,7 @@
 
 const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
-
-export default { 
+const config = { 
 	darkMode: "class",
 	content: [
 		"./index.html",
@@ -151,4 +150,4 @@ export default {
 	],
 };
 
-
+export default config;
