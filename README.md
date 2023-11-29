@@ -6,7 +6,7 @@ To review the submission, please follow the steps below to run the repository lo
 
 1. Clone or download the repository to your local device.
 2. Navigate to the root directory and execute the command `npm i` to install the required dependencies.
-3. After the installation is complete, run `npm start`. The project will be accessible at [http://localhost:3000](http://localhost:3000) in your web browser.
+3. After the installation is complete, run `npm start`. The project will be accessible at [http://localhost:5173](http://localhost:5173) in your web browser.
 
 This repository includes a presentation of a customized SelectComponent designed to demonstrate its performance under various scenarios, particularly those outlined in the provided documentation.
 
